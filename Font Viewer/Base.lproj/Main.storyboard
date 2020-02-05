@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15400"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,11 +674,11 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Font_Viewer" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
+            <point key="canvasLocation" x="61" y="-1"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -685,8 +686,7 @@
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="contentRect" x="585" y="405" width="370" height="250"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
@@ -698,16 +698,187 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="75" y="249"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="cC1-SU-Ggj">
+            <objects>
+                <windowController storyboardIdentifier="fontsDisplayStoryboardID" id="uww-9q-sEJ" sceneMemberID="viewController">
+                    <window key="window" title="Fonts Display" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="jel-A4-pTd" customClass="NSPanel">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="249" width="370" height="250"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
+                        <connections>
+                            <outlet property="delegate" destination="uww-9q-sEJ" id="6oG-fM-7zf"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="IIh-AN-cGg" kind="relationship" relationship="window.shadowedContentViewController" id="TMB-QS-iwI"/>
+                    </connections>
+                </windowController>
+                <customObject id="92k-pK-TyY" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="550" y="249"/>
+        </scene>
+        <!--Fonts Display View Controller-->
+        <scene sceneID="RhC-qk-c8L">
+            <objects>
+                <viewController id="IIh-AN-cGg" customClass="FontsDisplayViewController" customModule="Font_Viewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="V7W-bz-WEV">
+                        <rect key="frame" x="0.0" y="0.0" width="370" height="250"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QkB-0g-d6y">
+                                <rect key="frame" x="20" y="60" width="330" height="170"/>
+                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="iKy-vj-a7n">
+                                    <rect key="frame" x="0.0" y="0.0" width="315" height="170"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="3ud-fE-IeG">
+                                            <rect key="frame" x="0.0" y="0.0" width="315" height="170"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="minSize" width="315" height="170"/>
+                                            <size key="maxSize" width="315" height="10000000"/>
+                                            <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        </textView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="hn6-WH-oe5">
+                                    <rect key="frame" x="-100" y="-100" width="225" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="RKp-1E-hf8">
+                                    <rect key="frame" x="315" y="0.0" width="15" height="170"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LbN-EO-vTM">
+                                <rect key="frame" x="147" y="13" width="75" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="IQ1-iE-p9h"/>
+                                    <constraint firstAttribute="width" constant="70" id="kns-u2-22h"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Close" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UW2-wg-eoV">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="closeWindow:" target="IIh-AN-cGg" id="V5E-n6-pAo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="QkB-0g-d6y" firstAttribute="leading" secondItem="V7W-bz-WEV" secondAttribute="leading" constant="20" id="KT1-lR-xUP"/>
+                            <constraint firstAttribute="bottom" secondItem="LbN-EO-vTM" secondAttribute="bottom" constant="20" id="c5t-Pd-0Bd"/>
+                            <constraint firstAttribute="bottom" secondItem="QkB-0g-d6y" secondAttribute="bottom" constant="60" id="hth-f9-pBk"/>
+                            <constraint firstAttribute="trailing" secondItem="QkB-0g-d6y" secondAttribute="trailing" constant="20" id="igE-HN-joR"/>
+                            <constraint firstItem="QkB-0g-d6y" firstAttribute="top" secondItem="V7W-bz-WEV" secondAttribute="top" constant="20" id="tUr-3H-KgH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="fontsTextView" destination="3ud-fE-IeG" id="xUG-xh-Fi8"/>
+                    </connections>
+                </viewController>
+                <customObject id="leE-5M-lDq" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="550" y="655"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Font_Viewer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="370" height="250"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UpS-Ve-zBU">
+                                <rect key="frame" x="18" y="206" width="335" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="b1z-yQ-Qwj"/>
+                                </constraints>
+                                <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="yma-av-neI" id="x9x-xd-NqH">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <menu key="menu" id="oL0-bW-VAA">
+                                        <items>
+                                            <menuItem title="Item 1" state="on" id="yma-av-neI"/>
+                                            <menuItem title="Item 2" id="Gxe-YI-DUn"/>
+                                            <menuItem title="Item 3" id="sLF-Sx-8VY"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                                <connections>
+                                    <action selector="handleFontFamilySelection:" target="XfG-lQ-9wD" id="87n-9r-VuB"/>
+                                </connections>
+                            </popUpButton>
+                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FRh-7m-xIz">
+                                <rect key="frame" x="18" y="165" width="335" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="aM9-H7-DD7"/>
+                                </constraints>
+                                <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="pcU-sj-wHg" id="DYS-rA-YxT">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <menu key="menu" id="qgs-Yz-bhC">
+                                        <items>
+                                            <menuItem title="Item 1" state="on" id="pcU-sj-wHg"/>
+                                            <menuItem title="Item 2" id="ScZ-3P-RH4"/>
+                                            <menuItem title="Item 3" id="4C2-XY-IPT"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                                <connections>
+                                    <action selector="handleFontTypeSelection:" target="XfG-lQ-9wD" id="LIM-cM-HjL"/>
+                                </connections>
+                            </popUpButton>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uLF-Yl-bAo">
+                                <rect key="frame" x="224" y="13" width="132" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="OuA-te-KiY"/>
+                                    <constraint firstAttribute="height" constant="21" id="PCF-fz-9qv"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Display All" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="NY8-v9-vSD">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="displayAllFonts:" target="XfG-lQ-9wD" id="eEw-VJ-wB7"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OwF-H9-md1">
+                                <rect key="frame" x="18" y="68" width="334" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="olO-X3-XAj"/>
+                                </constraints>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="yJu-Iy-eWo">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="FRh-7m-xIz" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="67r-aM-kmV"/>
+                            <constraint firstAttribute="trailing" secondItem="OwF-H9-md1" secondAttribute="trailing" constant="20" id="9NN-yT-WIV"/>
+                            <constraint firstItem="FRh-7m-xIz" firstAttribute="top" secondItem="UpS-Ve-zBU" secondAttribute="bottom" constant="20" id="BjJ-FC-ncz"/>
+                            <constraint firstItem="UpS-Ve-zBU" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="Cdx-tF-XyG"/>
+                            <constraint firstItem="OwF-H9-md1" firstAttribute="top" secondItem="FRh-7m-xIz" secondAttribute="bottom" constant="20" id="I7m-HD-m8v"/>
+                            <constraint firstItem="UpS-Ve-zBU" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="RCL-Nc-6Sg"/>
+                            <constraint firstAttribute="trailing" secondItem="UpS-Ve-zBU" secondAttribute="trailing" constant="20" id="SLz-u3-AGx"/>
+                            <constraint firstAttribute="bottom" secondItem="uLF-Yl-bAo" secondAttribute="bottom" constant="20" id="W0u-f7-HOU"/>
+                            <constraint firstAttribute="trailing" secondItem="FRh-7m-xIz" secondAttribute="trailing" constant="20" id="XY9-SG-gzq"/>
+                            <constraint firstAttribute="trailing" secondItem="uLF-Yl-bAo" secondAttribute="trailing" constant="20" id="afn-J5-79h"/>
+                            <constraint firstItem="OwF-H9-md1" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="wbt-13-W2a"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="fontFamiliesPopup" destination="UpS-Ve-zBU" id="Wi1-fh-oyg"/>
+                        <outlet property="fontTypesPopup" destination="FRh-7m-xIz" id="GvK-Bb-0aZ"/>
+                        <outlet property="sampleLabel" destination="OwF-H9-md1" id="aGw-Lv-v11"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
